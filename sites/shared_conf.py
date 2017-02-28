@@ -3,25 +3,22 @@ from datetime import datetime
 
 import alabaster
 
+try:
+    # Use ReadTheDocs default theme only if it is installed.
+    # Simply installit via ``pip install sphinx_rtd_theme``
+    import sphinx_rtd_theme  # noqa: F401
+    html_theme = "sphinx_rtd_theme"
+    extensions = []
+except ImportError:
+    # Alabaster theme + mini-extension
+    html_theme_path = [alabaster.get_path()]
+    extensions = ['alabaster']
+    html_theme = 'alabaster'
 
-# Alabaster theme + mini-extension
-html_theme_path = [alabaster.get_path()]
-extensions = ['alabaster']
+
 # Paths relative to invoking conf.py - not this shared file
 html_static_path = [join('..', '_shared_static')]
-html_theme = 'alabaster'
 html_theme_options = {
-    'logo': 'logo.png',
-    'logo_name': True,
-    'logo_text_align': 'center',
-    'description': "Pythonic remote execution",
-    'github_user': 'fabric',
-    'github_repo': 'fabric',
-    'travis_button': True,
-    'analytics_id': 'UA-18486793-1',
-
-    'link': '#3782BE',
-    'link_hover': '#3782BE',
 }
 html_sidebars = {
     '**': [

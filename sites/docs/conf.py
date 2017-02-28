@@ -22,7 +22,8 @@ intersphinx_mapping = {
     'www': (target, None),
 }
 
-# Sister-site links to WWW
-html_theme_options['extra_nav_links'] = {
-    "Main website": 'http://www.fabfile.org',
-}
+if html_theme == 'alabaster':
+    # Sister-site links to WWW
+    html_theme_options['extra_nav_links'] = {
+        "Main website": 'http://www.fabfile.org',
+    }
