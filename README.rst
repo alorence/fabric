@@ -1,3 +1,7 @@
+  **Important**
+  This fork is NOT the official codebase for Fabric. I created this to generate the doc website with ReadTheDoc theme instead of the default one used on https://www.fabfile.org.
+
+
 Fabric is a Python (2.5-2.7) library and command-line tool for
 streamlining the use of SSH for application deployment or systems
 administration tasks.
